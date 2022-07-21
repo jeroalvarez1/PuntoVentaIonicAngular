@@ -94,8 +94,11 @@
 	--ion-color-tint: var(--ion-color-grey-tint);
 }
 
-.font16px{
+.xx-large{
   font-size: xx-large;
+}
+.large{
+  font-size: large;
 }
 /**Font colors**/
 .fontColorBlack{
@@ -112,4 +115,9 @@
   border-top: solid;
   border-width: 0.1px;
   border-color: rgb(187, 187, 187);
+}
+
+/** cursor **/
+.pointer{
+  cursor:pointer;
 }
