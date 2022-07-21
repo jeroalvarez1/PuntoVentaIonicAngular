@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "Punto-de-Venta",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
