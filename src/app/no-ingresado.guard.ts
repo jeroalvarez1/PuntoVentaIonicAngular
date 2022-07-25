@@ -20,5 +20,4 @@ export class NoIngresadoGuard implements CanActivate {
         return true;
       }
   }
-  
 }
