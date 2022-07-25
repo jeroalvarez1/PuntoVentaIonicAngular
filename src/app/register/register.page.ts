@@ -18,14 +18,15 @@ export class RegisterPage implements OnInit {
 
   constructor(public formBuilder: FormBuilder, public alertController: AlertController, public navController: NavController) {  
     this.formularioRegistro = this.formBuilder.group({
-      'nombre': new FormControl("", Validators.required),
+      'username': new FormControl("", Validators.required),
+      'email': new FormControl("", Validators.required),
       'password': new FormControl("", Validators.required),
       'confirmacionPassword': new FormControl("", Validators.required)
     });
    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
   async guardar(){ 
     var formulario = this.formularioRegistro.value;
@@ -40,9 +41,15 @@ export class RegisterPage implements OnInit {
       return;
     } else {
       var usuario = {
-        nombre: formulario.nombre,
+        username: formulario.username,
+        email: formulario.email,
         password: formulario.password,
         confirmacionPassword: formulario.confirmacionPassword
+      }
+      var usuarioSave = {
+        username: formulario.username,
+        email: formulario.email,
+        password: formulario.password
       }
       if (usuario.password !== usuario.confirmacionPassword) {
         const alert2 = await this.alertController.create({
@@ -53,12 +60,28 @@ export class RegisterPage implements OnInit {
         await alert2.present();
         return;
       } else {
-        localStorage.setItem('usuario', JSON.stringify(usuario));
-
-
-        localStorage.setItem('ingresado', 'true');
-        this.navController.navigateRoot('home');
-        console.log("registrado")
+        let url = 'http://localhost:8888/api/register';
+        let response = await fetch(url, {
+          "method": 'POST',
+          "body": JSON.stringify(usuarioSave),
+          "headers": {
+            "Content-Type": 'application/json'
+          }
+        });
+        if (response.ok) {
+          console.log("ok")
+          localStorage.setItem('ingresado', 'true');
+          this.navController.navigateRoot('home');
+        } else {
+          console.log("No ok")
+          const alert3 = await this.alertController.create({
+            header: 'Datos invalidos',
+            message: 'Ya existe una cuenta con ese nombre de usuario o email',
+            buttons: ['Aceptar']
+          });
+          await alert3.present();
+          return;
+        }
       }
     }
   }

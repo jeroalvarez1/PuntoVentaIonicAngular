@@ -14,6 +14,7 @@ export class LoginPage implements OnInit {
   constructor(public formBuilder: FormBuilder, public alertController: AlertController, public navController: NavController){
     this.formularioLogin = this.formBuilder.group({
       'nombre': new FormControl("", Validators.required),
+      'email': new FormControl("", Validators.required),
       'password': new FormControl("", Validators.required)
     });
   }
@@ -32,18 +33,44 @@ export class LoginPage implements OnInit {
       return;
     } else {
       var formulario = this.formularioLogin.value;
-      var usuario = JSON.parse(localStorage.getItem('usuario'));
-      if (usuario.nombre == formulario.nombre && usuario.password == formulario.password) {
+
+      var usuarioLog = {
+        username: formulario.nombre,
+        email: formulario.email,
+        password: formulario.password
+      }
+
+      let url = 'http://localhost:8888/api/register';
+      let response = await fetch(url, {
+        "method": 'POST',
+        "body": JSON.stringify(usuarioLog),
+        "headers": {
+          "Content-Type": 'application/json'
+        }
+      });
+
+      let resp = await response.json();
+      
+      if (resp == "NC-PC") {
         localStorage.setItem('ingresado', 'true');
         this.navController.navigateRoot('home');
-      } else {
-        const alert = await this.alertController.create({
+      } else if (resp == "NC-PI") {
+        const alert2 = await this.alertController.create({
           header: 'Datos incorrectos',
-          message: 'Los datos que ingresaste no son correctos',
+          message: 'La contraseña es incorrecta',
           buttons: ['Aceptar']
         });
 
-        await alert.present();
+        await alert2.present();
+        return;
+      } else if (resp == "NI") {
+        const alert3 = await this.alertController.create({
+          header: 'Datos incorrectos',
+          message: 'Nombre de usuario incorrecto',
+          buttons: ['Aceptar']
+        });
+
+        await alert3.present();
         return;
       }
   }
