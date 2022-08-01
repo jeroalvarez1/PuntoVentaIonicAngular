@@ -3,10 +3,97 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>new-sale</ion-title>
+    <ion-title>New Sales</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-justify-content-center ion-padding"size-xs="12" size-sm="10" size-md="8" size-lg="6" size-lg="4">
+  <form action="">
+   
+    <ion-col>
+      <ion-item fill="outline">
+        <ion-label class="xx-large" position="floating">Codigo</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+      <ion-item fill="outline">
+        <ion-label class="xx-large" position="floating">Descripción</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+        <ion-row>
+          <ion-col>
+          <ion-item fill="outline">
+            <ion-label position="floating">Cantidad</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item fill="outline">
+            <ion-label position="floating">Precio</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+    
+    <ion-item>
+      <ion-label style="flex-flow: column;" >Stacked</ion-label>
+    </ion-item>
+  </form>
+    <div class="ion-padding">
+      <!-- Theme classes dark, material, bootstrap -->
+      <ngx-datatable
+        class="material"
+        [limit]="8" 
+        [rows]="rows" 
+        [rowHeight]="50" 
+        [columns]="columns"
+        [columnMode]="'force'" 
+        [sortType]="'multi'" 
+        [headerHeight]="50" 
+        [footerHeight]="50">
+      </ngx-datatable>
+    </div>
+    <ion-list>
+      <ion-row>
+        <ion-col>
+        <ion-item fill="outline">
+          <ion-label position="floating">Paga con:</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+      
+      <ion-item *ngFor="let entry of form">
+        <ion-label>{{entry.val}}</ion-label>
+        <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+      </ion-item>
+      
+      <ion-col>
+        <ion-item fill="outline">
+          <ion-label position="floating">Su vuelto es</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+    <ion-segment (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="efectivo">
+        <ion-label>Efectivo</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="tarjeta">
+        <ion-label>Tarjeta o Debito</ion-label>
+      </ion-segment-button>
+    </ion-segment >
+    <ion-row class="centrado" >
+      <ion-col>
+      <ion-button shape ="round"><ion-icon   slot="start" name="print"></ion-icon> Imprimir factura
+      </ion-button>
+     </ion-col>
+      <ion-col>
+      <ion-button color="success" shape="round"><ion-icon slot="start" name="wallet-outline"></ion-icon>Realizar Venta
+      </ion-button>
+      </ion-col>
+
+    </ion-row>
+
 
 </ion-content>

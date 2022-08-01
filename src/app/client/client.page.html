@@ -8,5 +8,64 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-searchbar></ion-searchbar>
+  <ion-card-content>
+    <ion-card-title>Agregar Cliente Nuevo</ion-card-title>
+    <ion-row>
+      <ion-col>
+          <ion-item fill="outline">
+            <ion-label position="floating">Nombre del Cliente</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item fill="outline">
+          <ion-label position="floating">Apellido</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item fill="outline">
+        <ion-label position="floating">Cuit</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item fill="outline">
+        <ion-label position="floating">Domicilio</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </ion-col> 
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item fill="outline">
+          <ion-label position="floating">Razón Social</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-card-subtitle>Tipo de Factura</ion-card-subtitle>
+      <ion-segment (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="tipoA">
+          <ion-label>A</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="tipoB">
+          <ion-label>B</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="tipoC">
+          <ion-label>C</ion-label>
+        </ion-segment-button>
+      </ion-segment >
+    </ion-row>
+    <ion-row class="centrado" >
+      <ion-col>
+        <ion-button shape ="round"><ion-icon   slot="start" name="print"></ion-icon> Agregar Nuevo Cliente
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card-content>
 </ion-content>
