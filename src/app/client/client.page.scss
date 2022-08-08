@@ -1,0 +1,42 @@
+@import '~bootstrap/dist/css/bootstrap.css';
+.search {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  ion-modal {
+    --height: 100%;
+    --border-radius: 16px;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  
+  ion-modal::part(backdrop) {
+    background: rgba(209, 213, 219);
+    opacity: 1;
+  }
+  
+  ion-modal ion-toolbar {
+    --background: rgb(14 116 144);
+    --color: white;
+  }
+  ion-item-divider{
+    background: tra;
+  }
+  ion-card-title{
+    margin: 1rem 0 1rem 0;
+    text-align: center;
+  }
+  ion-card-subtitle{
+    margin: 1rem 0 0.5rem 0;
+  }
+ 
+.resCliente{
+    margin: 2rem 0 1rem 0;
+}
+ion-item.item.md.item-fill-none.ion-activatable.ion-focusable.hydrated.item-label {
+    margin-top: 2rem;
+  }
+  @media (min-width: 576px) { 
+
+   }
+
+  

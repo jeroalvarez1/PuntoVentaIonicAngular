@@ -2,14 +2,13 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { IngresadoGuard } from './ingresado.guard';
 import { NoIngresadoGuard } from './no-ingresado.guard';
-import { HttpClientModule } from '@angular/common/http';
 
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'sidebar/client',
     pathMatch: 'full'
   },
   {
