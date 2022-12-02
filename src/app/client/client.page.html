@@ -1,0 +1,387 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addClient">
+    <ion-card>
+      <ion-card-content>
+        <ion-row>
+          <ion-col class="col-8">
+            <ion-searchbar class="search"></ion-searchbar>
+          </ion-col>
+          <ion-col class="align-self-center col-4">
+            <ion-button id="open-modal" expand="block" class="">Lista de Clientes</ion-button>
+          </ion-col>
+
+  <ion-modal #modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 0.25, 0.5, 0.75, 2] " [presentingElement]="presentingElement">
+    <ng-template>
+      <ion-content>
+        <ion-list class="pt-0">
+              <ion-item-divider sticky class="p-0" >
+                <ion-toolbar class="p-2">
+                <ion-searchbar placeholder="Search" (click)="modal.setCurrentBreakpoint(2)"></ion-searchbar>
+                <ion-back-button class="m-3" slot="end"(click)="modal.dismiss()" shape="round" defaultHref="/home"></ion-back-button>
+                </ion-toolbar>
+              </ion-item-divider>
+            <ion-card>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row class="d-flex justify-content-between"> 
+                        <ion-col class="col-8" >
+                          <ion-label>
+                            <h3 class="">Jero Alvarez</h3>
+                            <ion-row class="border border-2">
+                              <ion-col class="">
+                                <h6>Factura A</h6>
+                              </ion-col>
+                              <ion-col>
+                                <h6>Sin Cuenta corriente</h6>
+                              </ion-col>
+                            </ion-row>
+
+                            
+                          </ion-label>
+                        </ion-col >
+                          <ion-col  class="col_4" size="auto">    
+                            <ion-button (click)="presentAlert()" shape="round" title="Editar cliente" color="warning">
+                              <ion-icon name="pencil-outline"></ion-icon>
+                            </ion-button>
+                
+                            <ion-button (click)="presentDelete()"shape="round" title="Borrar cliente" color="danger">
+                              <ion-icon name="trash-outline"></ion-icon>
+                            </ion-button>
+                          </ion-col>  
+                  </ion-row>
+                </ion-grid>      
+              </ion-card-content>
+            </ion-card>
+            <ion-card>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row class="d-flex justify-content-between"> 
+                        <ion-col class="col-8" size="auto">
+                          <ion-label>
+                            <h2>Connor Smith</h2>
+                            <p>Sales Rep</p>
+                          </ion-label>
+                        </ion-col >
+                          <ion-col  class="col_4" size="auto">    
+                            <ion-button shape="round" title="Editar cliente" color="warning">
+                              <ion-icon name="pencil-outline"></ion-icon>
+                            </ion-button>
+                
+                            <ion-button shape="round" title="Borrar cliente" color="danger">
+                              <ion-icon name="trash-outline"></ion-icon>
+                            </ion-button>
+                          </ion-col>  
+                  </ion-row>
+                </ion-grid>      
+              </ion-card-content>
+            </ion-card>
+            <ion-card>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row class="d-flex justify-content-between"> 
+                        <ion-col class="col-8" size="auto">
+                          <ion-label>
+                            <h2>Connor Smith</h2>
+                            <p>Sales Rep</p>
+                          </ion-label>
+                        </ion-col >
+                          <ion-col  class="col_4" size="auto">    
+                            <ion-button shape="round" title="Editar cliente" color="warning">
+                              <ion-icon name="pencil-outline"></ion-icon>
+                            </ion-button>
+                
+                            <ion-button shape="round" title="Borrar cliente" color="danger">
+                              <ion-icon name="trash-outline"></ion-icon>
+                            </ion-button>
+                          </ion-col>  
+                  </ion-row>
+                </ion-grid>      
+              </ion-card-content>
+            </ion-card>
+            <ion-card>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row class="d-flex justify-content-between"> 
+                        <ion-col class="col-8" size="auto">
+                          <ion-label>
+                            <h2>Connor Smith</h2>
+                            <p>Sales Rep</p>
+                          </ion-label>
+                        </ion-col >
+                          <ion-col  class="col_4" size="auto">    
+                            <ion-button shape="round" title="Editar cliente" color="warning">
+                              <ion-icon name="pencil-outline"></ion-icon>
+                            </ion-button>
+                
+                            <ion-button shape="round" title="Borrar cliente" color="danger">
+                              <ion-icon name="trash-outline"></ion-icon>
+                            </ion-button>
+                          </ion-col>  
+                  </ion-row>
+                </ion-grid>      
+              </ion-card-content>
+            </ion-card>
+            <ion-card>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row class="d-flex justify-content-between"> 
+                        <ion-col class="col-8" size="auto">
+                          <ion-label>
+                            <h2>Connor Smith</h2>
+                            <p>Sales Rep</p>
+                          </ion-label>
+                        </ion-col >
+                          <ion-col  class="col_4" size="auto">    
+                            <ion-button shape="round" title="Editar cliente" color="warning">
+                              <ion-icon name="pencil-outline"></ion-icon>
+                            </ion-button>
+                
+                            <ion-button shape="round" title="Borrar cliente" color="danger">
+                              <ion-icon name="trash-outline"></ion-icon>
+                            </ion-button>
+                          </ion-col>  
+                  </ion-row>
+                </ion-grid>      
+              </ion-card-content>
+            </ion-card>
+            <ion-card>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row class="d-flex justify-content-between"> 
+                        <ion-col class="col-8" size="auto">
+                          <ion-label>
+                            <h2>Connor Smith</h2>
+                            <p>Sales Rep</p>
+                          </ion-label>
+                        </ion-col >
+                          <ion-col  class="col_4" size="auto">    
+                            <ion-button shape="round" title="Editar cliente" color="warning">
+                              <ion-icon name="pencil-outline"></ion-icon>
+                            </ion-button>
+                
+                            <ion-button shape="round" title="Borrar cliente" color="danger">
+                              <ion-icon name="trash-outline"></ion-icon>
+                            </ion-button>
+                          </ion-col>  
+                  </ion-row>
+                </ion-grid>      
+              </ion-card-content>
+            </ion-card><ion-card>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row class="d-flex justify-content-between"> 
+                        <ion-col class="col-8" size="auto">
+                          <ion-label>
+                            <h2>Connor Smith</h2>
+                            <p>Sales Rep</p>
+                          </ion-label>
+                        </ion-col >
+                          <ion-col  class="col_4" size="auto">    
+                            <ion-button shape="round" title="Editar cliente" color="warning">
+                              <ion-icon name="pencil-outline"></ion-icon>
+                            </ion-button>
+                
+                            <ion-button shape="round" title="Borrar cliente" color="danger">
+                              <ion-icon name="trash-outline"></ion-icon>
+                            </ion-button>
+                          </ion-col>  
+                  </ion-row>
+                </ion-grid>      
+              </ion-card-content>
+            </ion-card><ion-card>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row class="d-flex justify-content-between"> 
+                        <ion-col class="col-8" size="auto">
+                          <ion-label>
+                            <h2>Connor Smith</h2>
+                            <p>Sales Rep</p>
+                          </ion-label>
+                        </ion-col >
+                          <ion-col  class="col_4" size="auto">    
+                            <ion-button shape="round" title="Editar cliente" color="warning">
+                              <ion-icon name="pencil-outline"></ion-icon>
+                            </ion-button>
+                
+                            <ion-button shape="round" title="Borrar cliente" color="danger">
+                              <ion-icon name="trash-outline"></ion-icon>
+                            </ion-button>
+                          </ion-col>  
+                  </ion-row>
+                </ion-grid>      
+              </ion-card-content>
+            </ion-card><ion-card>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row class="d-flex justify-content-between"> 
+                        <ion-col class="col-8" size="auto">
+                          <ion-label>
+                            <h2>Connor Smith</h2>
+                            <p>Sales Rep</p>
+                          </ion-label>
+                        </ion-col >
+                          <ion-col  class="col_4" size="auto">    
+                            <ion-button shape="round" title="Editar cliente" color="warning">
+                              <ion-icon name="pencil-outline"></ion-icon>
+                            </ion-button>
+                
+                            <ion-button shape="round" title="Borrar cliente" color="danger">
+                              <ion-icon name="trash-outline"></ion-icon>
+                            </ion-button>
+                          </ion-col>  
+                  </ion-row>
+                </ion-grid>      
+              </ion-card-content>
+            </ion-card>
+            <ion-card>
+              <ion-card-content>
+                <ion-grid>
+                  <ion-row class="d-flex justify-content-between"> 
+                        <ion-col class="col-8" size="auto">
+                          <ion-label>
+                            <ion-title>Jero Alvarez</ion-title>
+                            <ion-subtitle>factura A</ion-subtitle>
+                          </ion-label>
+                        </ion-col >
+                          <ion-col  class="col_4" size="auto">    
+                            <ion-button shape="round" title="Editar cliente" color="warning">
+                              <ion-icon name="pencil-outline"></ion-icon>
+                            </ion-button>
+                
+                            <ion-button shape="round" title="Borrar cliente" color="danger">
+                              <ion-icon name="trash-outline"></ion-icon>
+                            </ion-button>
+                          </ion-col>  
+                  </ion-row>
+                </ion-grid>      
+              </ion-card-content>
+            </ion-card>
+      </ion-list>   
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+          
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item fill="outline">
+              <ion-label position="floating">Nombre del Cliente</ion-label>
+              <ion-input formControlName="name"></ion-input>
+              <ng-container *ngIf="addClient.get('name').hasError('required')">
+              </ng-container> 
+              
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item fill="outline">
+              <ion-label position="floating">Apellido</ion-label>
+              <ion-input formControlName="lastName"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item fill="outline">
+              <ion-label position="floating">Cuit / Cuil / DNI</ion-label>
+              <ion-input formControlName="cuitNumber"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item fill="outline">
+              <ion-label position="floating">Domicilio</ion-label>
+              <ion-input formControlName="direction"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item fill="outline">
+              <ion-label position="floating">Razón Social</ion-label>
+              <ion-input formControlName="businessName"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-card-subtitle>Seleccione un tipo de factura</ion-card-subtitle>
+            <ion-list>
+              <ion-item fill="outline">
+                <ion-select [compareWith]="compareWith" placeholder="Seleccione tipo de Factura"
+                  (ionChange)="handleChange($event)" formControlName="typeFacture">
+                  <ion-select-option *ngFor="let factura of facturas" [value]="factura"  >{{ factura.name }}
+                  </ion-select-option >
+                </ion-select>
+              </ion-item>
+
+            </ion-list>
+            <!-- mirar el page.ts se valida el list y se trae al label -->
+            <!-- <ion-popover trigger="popover-button" [dismissOnSelect]="true">
+          <ng-template>
+            <ion-content>
+              <ion-list>
+                <ion-item [button]="true" [detail]="false" (click)="rFactura('a')">Factura A</ion-item>
+                <ion-item [button]="true" [detail]="false"(click)="rFactura('b')">Factura B</ion-item>
+                <ion-item [button]="true" [detail]="false"(click)="rFactura('c')">Factura C</ion-item>
+                <ion-item [button]="true" [detail]="false"(click)="rFactura('s')">Sin factura</ion-item>
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-popover> -->
+            <!--  <ion-label>{{val}}</ion-label> -->
+          </ion-col>
+          <ion-col>
+            <ion-card-subtitle>Seleccione si tiene cuenta corriente</ion-card-subtitle>
+            <ion-list>
+              <ion-item fill="outline">
+                <ion-select [compareWith]="compareWith" placeholder="Seleccione tipo de Cuenta"
+                  (ionChange)="handleChange($event)" formControlName="currentAccounts">
+                  <ion-select-option *ngFor="let cuenta of cuentas" [value]="cuenta" required>{{ cuenta.name }}
+                  </ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+        <ion-row class="justify-content-center justify-content-sm-center justify-content-md-end">
+          <ion-col size="auto">
+            <ion-button type="submit" shape="round" title="Agregar cliente">
+              <ion-icon name="add-circle-outline"></ion-icon>
+            </ion-button>
+
+            <ion-button shape="round" title="Editar cliente" color="warning">
+              <ion-icon name="pencil-outline"></ion-icon>
+            </ion-button>
+
+            <ion-button shape="round" title="Borrar cliente" color="danger">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+      </ion-card-content>
+      <ion-item-sliding class="resClient" id="item100">
+        <ion-item href="#">
+          <ion-label>
+            <h2>Cliente: Jero Alvarez</h2>
+            <p>Cuenta corriente : 3.000$</p>
+            <p>Tipo de Factura: A</p>
+          </ion-label>
+          <ion-note slot="end">
+            10:45 AM
+          </ion-note>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-card>
+  </form>
+
+</ion-content>
+agregar focus

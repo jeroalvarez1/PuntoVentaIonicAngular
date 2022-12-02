@@ -3,15 +3,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { IngresadoGuard } from './ingresado.guard';
 import { NoIngresadoGuard } from './no-ingresado.guard';
 
+
+
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
-    canActivate: [IngresadoGuard]
-  },
-  {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'sidebar/client',
     pathMatch: 'full'
   },
   {
@@ -29,6 +26,13 @@ const routes: Routes = [
     loadChildren: () => import('./lost-password/lost-password.module').then( m => m.LostPasswordPageModule),
     canActivate: [NoIngresadoGuard]
   },
+  {
+    path: 'sidebar',
+    loadChildren: () => import('./sidebar/sidebar.module').then( m => m.SidebarPageModule),
+    canActivate: [IngresadoGuard]
+  }
+
+
 ];
 
 @NgModule({

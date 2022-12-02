@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>products</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!--   tabla para fucar por fechas -->
+  <ion-datetime>
+    <ion-buttons slot="buttons">
+      <ion-button color="danger" onclick="datetime.reset()">Reset</ion-button>
+      <ion-button color="primary" onclick="datetime.cancel()">Never mind</ion-button>
+      <ion-button color="primary" onclick="datetime.confirm()">All Set</ion-button>
+    </ion-buttons>
+  </ion-datetime>
+  
+  <script>
+    var datetime = document.querySelector('ion-datetime');
+  </script>
+</ion-content>

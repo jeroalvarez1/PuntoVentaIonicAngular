@@ -1,0 +1,119 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>New Sales</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-justify-content-center ion-padding" size-xs="12" size-sm="10" size-md="8" size-lg="6"
+  size-lg="4">
+  <ion-card>
+    <ion-card-content>
+      <form action="">
+        <ion-row>
+          <ion-col>
+            <ion-row>
+              <ion-col>
+                <ion-item fill="outline">
+                  <ion-label position="floating">Codigo</ion-label>
+                  <ion-input></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item fill="outline">
+                  <ion-label position="floating">Nombre</ion-label>
+                  <ion-input></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item fill="outline">
+                  <ion-label position="floating">Cantidad</ion-label>
+                  <ion-input></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item fill="outline">
+                  <ion-label position="floating">Precio</ion-label>
+                  <ion-input></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </form>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+
+      <ion-label style="flex-flow: column;">Stacked</ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="">
+        <!-- Theme classes dark, material, bootstrap -->
+        <ngx-datatable class="material" [limit]="8" [rows]="rows" [rowHeight]="50" [columns]="columns"
+          [columnMode]="'force'" [sortType]="'multi'" [headerHeight]="50" [footerHeight]="50">
+        </ngx-datatable>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <ion-row>
+    <ion-col>
+      <ion-list>
+        <ion-row>
+          <ion-col>
+            <ion-item fill="outline">
+              <ion-label position="floating">Paga con:</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item *ngFor="let entry of form">
+              <ion-label>{{entry.val}}</ion-label>
+              <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item fill="outline">
+              <ion-label position="floating">Su vuelto es</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-segment (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="efectivo">
+          <ion-label>Efectivo</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="tarjeta">
+          <ion-label>Tarjeta o Debito</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-col>
+  </ion-row>
+  <ion-row class="centrado">
+    <ion-col>
+      <ion-button shape="round">
+        <ion-icon slot="start" name="print"></ion-icon> Imprimir factura
+      </ion-button>
+    </ion-col>
+    <ion-col>
+      <ion-button color="success" shape="round">
+        <ion-icon slot="start" name="wallet-outline"></ion-icon>Realizar Venta
+      </ion-button>
+    </ion-col>
+
+  </ion-row>
+
+</ion-content>
